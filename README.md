@@ -22,7 +22,7 @@ Before getting started, ensure that you have the following installed on your mac
 Clone the repository to your local machine by running the following command:
 
 ```bash
-git clone <repository_url>
+git clone https://github.com/Tarandeep19/Trippy-Trip
 ```
 
 ### 2. Install dependencies
