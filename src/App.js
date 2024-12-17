@@ -27,9 +27,9 @@ const App = () => {
       ({ coords: { latitude, longitude } }) => {
         setCoords({ lat: latitude, lng: longitude });
       },
-      (error) => {
+      () => {
         setCoords({ lat: 0, lng: 0 }); // Default to the equator if geolocation fails
-      },
+      }
     );
   }, []);
 
@@ -38,7 +38,6 @@ const App = () => {
     if (Array.isArray(places)) {
       const filtered = places.filter((place) => Number(place.rating) > rating);
       setFilteredPlaces(filtered);
-    } else {
     }
   }, [rating, places]);
 
@@ -74,7 +73,6 @@ const App = () => {
       const lat = place.geometry.location.lat();
       const lng = place.geometry.location.lng();
       setCoords({ lat, lng });
-    } else {
     }
   };
 
