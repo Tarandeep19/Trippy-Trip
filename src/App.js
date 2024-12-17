@@ -29,7 +29,7 @@ const App = () => {
       },
       () => {
         setCoords({ lat: 0, lng: 0 }); // Default to the equator if geolocation fails
-      }
+      },
     );
   }, []);
 
