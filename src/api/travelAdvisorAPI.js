@@ -19,7 +19,6 @@ export const getPlacesData = async (type, sw, ne) => {
 
     return data;
   } catch (error) {
-    console.error('Error fetching places data:', error);
     return [];
   }
 };
@@ -28,7 +27,6 @@ export const getPlacesData = async (type, sw, ne) => {
 export const getWeatherData = async (lat, lng) => {
   try {
     if (!lat || !lng) {
-      console.error('Invalid latitude or longitude');
       return null;
     }
 
@@ -41,7 +39,6 @@ export const getWeatherData = async (lat, lng) => {
     });
     return data;
   } catch (error) {
-    console.error('Error fetching weather data:', error);
     return null;
   }
 };
