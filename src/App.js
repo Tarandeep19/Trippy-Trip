@@ -28,7 +28,6 @@ const App = () => {
         setCoords({ lat: latitude, lng: longitude });
       },
       (error) => {
-        console.error('Geolocation error:', error);
         setCoords({ lat: 0, lng: 0 }); // Default to the equator if geolocation fails
       },
     );
@@ -40,7 +39,6 @@ const App = () => {
       const filtered = places.filter((place) => Number(place.rating) > rating);
       setFilteredPlaces(filtered);
     } else {
-      console.error('Places is not an array:', places);
     }
   }, [rating, places]);
 
@@ -59,7 +57,6 @@ const App = () => {
           setFilteredPlaces([]);
           setRating('');
         })
-        .catch((error) => console.error('Error fetching data:', error))
         .finally(() => setIsLoading(false));
     }
   }, [bounds, type, coords]);
@@ -69,7 +66,6 @@ const App = () => {
 
   const onPlaceChanged = () => {
     if (!autocomplete) {
-      console.error('Autocomplete not initialized');
       return;
     }
 
@@ -79,7 +75,6 @@ const App = () => {
       const lng = place.geometry.location.lng();
       setCoords({ lat, lng });
     } else {
-      console.error('Place has no geometry:', place);
     }
   };
 
